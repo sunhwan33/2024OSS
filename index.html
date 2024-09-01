@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>20240829</title>
+        <link rel="shortcut icon" href="img/sea.JPG">
+
+        <style>
+            p{
+                font-size: 0rem;
+            }
+            .div_class{
+                font-size: 2rem;
+            }
+            #div_id2{
+                font-size: 5rem;
+            }
+        </style>
+    </head>
+    <body>
+        HELLO WORLD! <br/>
+        안녕하세요!
+        <font>font태그입니다.</font>
+        <div id="div_id" class='div_class' style="color:#f60707">내용을 담을 수 있습니다.</div>
+        <div id="div_id2" class='div_class2' style="background-image: url('img/sea.JPG')">내용을 담을 수 없습니다.2</div>
+        <img src="img/sea.JPG" style="width:50px;height:auto;" alt="sample image" onerror="alert('꽝!');"/> <!--alt는 에러났을 때의 대체 나오는 것, onerror은 에러났을 때의 메시지창--> 
+        <img src='img/sea.JPG' alt="sample image" width="50px"> 
+        <img src="data:image/png;base64,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" 
+        style="width:50px;" alt="img_src_test" />
+        
+    
+        <div>
+            H태그 입니다.
+
+            111        2222  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;44$44
+            <br>
+                &nbsp;1122
+        </div>
+        <h1> h1 tag!!</h1>
+        <h2> h2 tag!!</h2>
+        <h3> h3 tag!!</h3>
+        <h4> h4 tag!!</h4>
+        <h5> h5 tag!!</h5>
+        <h6> h6 tag!!</h6>
+
+        <p>패러그래프1!</p>
+        <p>패러그래프2!</p>
+
+        <ul>
+            <li>순서와 상관없는 리스트!!</li>
+            <li>순서와 상관없는 리스트!</li>
+            <li>순서와 상관없는 리스트~</li>
+            <li>순서와 상관없는 리스트$</li>
+        </ul>
+        <ol>
+            <li>순서와 상관있는 리스트!!</li>
+            <li>순서와 상관있는 리스트!</li>
+            <li>순서와 상관있는 리스트~</li>
+            <li>순서와 상관있는 리스트$</li>
+        </ol>
+
+        <a href="https://www.daum.net/" target="_blank" >여기로 이동해주세요!</a>
+        <br/><a href="https://www.naver.com/" target="_blank" style='color:blue'>여기로 이동해주세요!(파랑색유지)</a>
+        <br/><a href="javascript:alert(1);">a태그인데, js 실행</a>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!--
+        HTML Block
+        <div> <ul> <ol> <li>
+        HTML LINKS
+        <a>
+            -->
+    </body>
+</html>
