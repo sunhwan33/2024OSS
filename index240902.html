@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20240902</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./star.jpg">
+    <style>
+        .hide{
+            display: none;
+        }
+        .visibility_hidden{
+            visibility : hidden;
+        }
+        #div_room{
+            font-size: 5rem;
+            border: #000000 solid 5px;
+            background-color: #0a6aa1;
+            margin : 50px; /*하나의 값만 주면 4개 방향 다 적용해줍니다*/
+            /*각 방향별로도 설정 가능 적용해줍니다*/
+            margin-top: 20px;
+            margin-right: 40px;
+            margin-bottom : 20px;
+            margin-left: 20px;            
+        }
+        #div_room1{
+            font-size: 5rem;
+            /*border: #000000 dotted 5px;*/
+            border: #0d70b7 5px;
+            border-style: dotted ;
+            border-radius: 25px;
+            background-color: #9d937c;
+            margin : 20px 40px 20px 20px;     
+                   
+        }
+        #div_room2{
+            font-size: 5rem;
+            border: #000000 solid 5px;
+            background-color: yellowgreen;
+            margin : 0px; /*default*/
+            padding: 20px 40px 20px 20px;
+        }
+        #div_font_style{
+            font-size: 50px;
+            font-size:1.1em;
+            font-size:1.5rem;
+            width: 50vw; /*vw : width의 몇 %인지*/
+            height: 20vh; /*vh : height의 몇 %인지*/
+            border: #000000 solid 5px;
+            
+        }
+        #div_font_style1{
+            
+            font-weight: 400;  /* 400은 normal랑 같음, 700은 bold랑 같음, 900이 최대 */
+        }
+        #div_font_style2{
+          
+            font-weight: normal;  /* 400은 normal랑 같음, 700은 bold랑 같음, 900이 최대*/
+        }
+        #div_font_style3{
+            
+            font-weight: 700;  /* 400은 normal랑 같음, 700은 bold랑 같음, 900이 최대 */
+        }
+        #div_font_style4{
+            
+            font-weight: bold;  /* 400은 normal랑 같음, 700은 bold랑 같음, 900이 최대 */
+        }
+        #div_font_style5{
+            
+            font-weight: 900;  /* 400은 normal랑 같음, 700은 bold랑 같음, 900이 최대 */
+        }
+        #div_font_color{
+            color: red;
+            background-color: rgb(31,120,50);
+            background-color: rgb(31,120,50); opacity: 0.1;
+            background-color: rgba(31,120,50,0.1);
+        }
+        #div_position_fixed{
+
+        }
+    </style>
+</head>
+<body>
+    <div>안녕 위에 있는 공간</div>
+   <div id="div_room"> 안녕</div>
+   <div id="div_room1"> 안녕</div>
+   <div id="div_room2"> padding</div>
+   
+   <div>안녕 아래에 있는 공간</div>
+   <div id="div_font_style">글자 스타일</div>
+   <div id="div_font_style1">글자 스타일1 (font-weight 400)</div>
+   <div id="div_font_style2">글자 스타일2 (font-weight normal)</div>
+   <div id="div_font_style3">글자 스타일3 (font-weight 700)</div>
+   <div id="div_font_style4">글자 스타일4 (font-weight bold)</div>
+   <div id="div_font_style5">글자 스타일5 (font-weight 900)</div>
+
+   <div id="div_font_color">글자 스타일1</div>
+   <div id="div_class_hide" onclick>sss</div>
+   <div class="visibility_hidden"> it is not visibile</div>
+
+   <b>진하게!!</b>
+   <div id="div_position_fixed" style="position: fixed;top:50px;left:100px;background-color:yellow">
+    fixed_position
+    </div>
+    <div style="position:fixed;top:300px"> <!--z-index의 값이 누가 더 크냐에 따라, 위로 올라온다.-->
+        <div id="div_position_absolute1" style="position: absolute; top:0px; left:100px; background-color:blue; z-index: 30;">
+            absolute position1</div>
+        <div id="div_position_absolute2" style="position: absolute; top:10px; left:100px; background-color:yellow; z-index: 40;">
+            absolute position2</div>
+    </div> 
+    
+
+    <table style="width:100%;text-align:center;">
+        <tr>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+        </tr>
+    </table>
+    <table style="width:100%;text-align:center; border:#000000 solid 5px">
+        <thead>
+            <tr>
+                <th style="border-bottom:#000000 dotted 5px;">#</th>
+                <th>제목</th>
+                <th colspan="2">숫자1</th>
+                <!--<th>숫자1</th>-->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+            <tr>
+                <!--<td>2</td>-->
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <div>
+        <a>111</a>
+        <a style="float: right;">222</a>
+        <a>121</a>
+        <a>131</a>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</body>
+</html>
