@@ -34,7 +34,7 @@
         #menulist{
             padding: 0;
         }
-        .menuitem {
+        .menuitem_off {
             width: 155px;
             background-color: #f0f0f0;
             border: 1px solid none;
@@ -46,11 +46,22 @@
             text-align: left;
             font-weight: 500;
             position: relative;
+            
         }
-        .menuitem:hover{
+        .menuitem_off:hover{
+            
             background-color: #ffffff;
         }
         .menuitem_on{
+            width: 155px;
+            border: 1px solid none;
+            font-size: 17px;
+            list-style-type: none;
+            margin: 3px;
+            padding: 5px;
+            text-align: left;
+            font-weight: 500;
+            position: relative;
             background-color: green;
             color :#ffffff;
         }
@@ -88,11 +99,11 @@
     <div class="main">
         <div id="menu_bar">
             <ul id="menulist">
-                <li class ="menuitem menuitem_on"><a style=color:#ffffff href="style1.htm">Stylesheet1</a></li>
-                <li class ="menuitem"><a style=color:#000000 href="style2.htm">Stylesheet2</a></li>
-                <li class ="menuitem"><a style=color:#000000 >Stylesheet3</a></li>
-                <li class ="menuitem"><a style=color:#000000 >Stylesheet4</a></li>
-                <li class ="menuitem"><a style=color:#000000 href="index.htm">No Stylesheet</a></li>
+                <li class ="menuitem_on">Stylesheet1</li></a>
+                <a style="text-decoration: none" color:#000000 href="style2.htm"><li class ="menuitem_off">Stylesheet2</li></a>
+                <a style="text-decoration: none"color:#000000><li class ="menuitem_off">Stylesheet3</li></a>
+                <a style="text-decoration: none"color:#000000><li class ="menuitem_off">Stylesheet4</li></a>
+                <a style="text-decoration: none"color:#000000 href="index.htm"><li class ="menuitem_off">No Stylesheet</li></a>
             </ul>
         </div>
         
