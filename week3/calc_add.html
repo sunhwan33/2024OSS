@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 800px){
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" onclick="console.log('div 클릭해봤습니다.')">div1 클릭 테스트</div>
+    <div id="div2" onmouseover="change_css(document=1)" onmouseleave="change_css(0)">div2 마우스 오버 테스트</div>
+    <div id="div3" onclick="maximize_css()">div3 클릭 확장 테스트</div>
+    <input id="num_1" type="number" /> +
+    <input id="num_2" type="number" onkeyup="console.log('keyup')" onkeydown="console.log('keydown')" onchange="console.log('changed')"/>
+    =
+    <input id="sum" type="number" />
+    <button onmouseout="add();">더해주세요!</button>
+    <script>
+        function add(){
+            
+            let num1=document.getElementById("num_1").value;
+            let num2=document.getElementById("num_2").value;
+            let sum=parseInt(num1)+parseInt(num2); 
+            //let sum = Number(num1) + Number(num2);
+            //alert(sum);
+            document.getElementById("sum").value = sum;
+        }
+        function change_css(obj_type){
+            let div2 = document.getElementById("div2");
+            if(obj_type ==1){
+                //div2.style = "height:300px"
+                div2.style = "background-color : yellow"
+            }
+            else div2.style = "background-color : pink";
+        }
+        function maximize_css(){
+            let div3 = document.getElementById("div3");
+            div3.style = "height:300px; background-color : skyblue";
+            let img = document.createElement("img");
+            img.src = "../img/sea.JPG";
+            img.alt = "Test Image";
+            img.style.width = "80%"; 
+            img.style.height = "auto";
+            div3.appendChild(img); // div3 내부에 이미지 추가
+            
+
+            // 이미지를 동적으로 추가
+            //div3.innerHTML = '<img src="../img/sea.jpg" alt="Test Image" style="width: 80%; height: auto;">';
+        }
+
+    </script>
+
+</body>
+</html>

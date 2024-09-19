@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div_skyblue{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div_add">추가될까요?</div>
+    <div id="div_add2">추가될까요?_2</div>
+    <div id="div_01">바뀌기 전 텍스트++++</div>
+    <div id="div_02" class="div_0">div_02</div>
+    <div id="div_03" class="div_0">div_03</div>
+    <div id="div_04" class="div_0">div_04</div>
+
+    <input type="text" id="input11" onchange="alert('change')" onfocus="console.log(1)" onblur="console.log(2)">
+
+    <script>
+        let div_01 = document.getElementById("div_01");
+        //alert("이제 바뀝니다!");
+        div_01.textContent="바뀐 후 텍스트"; //텍스트 변경하기
+        let num = 0;
+        //div_01.addEventListener('click', function() {
+        //    div_01.textContent= num++ + '번째 바뀐 텍스트';
+        //});
+        div_01.addEventListener('click', changeText);
+        function changeText(){
+            div_01.textContent= num++ + '번째 바뀐 텍스트(click?)';
+        }
+        let div_add = document.getElementById("div_add");
+        let div_add2 = document.getElementById("div_add2");
+        div_01.appendChild(div_add);
+        div_01.appendChild(div_add2);
+
+
+        div_01.textContent += "hahaha";
+        div_01.textContent += "hahaha";
+        div_01.textContent += "hahaha";
+        div_01.textContent += "hahaha";
+        div_01.textContent += "hahaha";
+        
+     
+
+        let div_0 = document.getElementsByClassName("div_0");
+        //alert(div_0.length);
+        //div_0[0].textContent = "0";
+        for(let i=0;i<div_0.length;i++){
+            //div_0[i].textContent = i+"번째 클래스 소유";
+            div_0[i].innerHTML = "<div>"+i+"번째"+"</div>"+ "<div>"+"클래스 소유!!"+"</div>";
+            div_0[i].setAttribute("class", "div_skyblue");
+        }
+    
+    </script>
+</body>
+</html>
