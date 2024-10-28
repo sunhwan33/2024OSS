@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="div_json_test">
+
+    </div>
+    <script>
+
+    /*
+        자바 스크립트 배열 선언해보기!
+        2가지 방법으로!!
+        sort
+        push
+        forEach
+    */
+    /*
+        let array_fruits = ["apple", "orange", "melon"];
+        alert(array_fruits.length);
+        alert(array_fruits[1]); //orange
+
+        let array_newfruits = new Array("apple1", "orange1", "melon1");
+        alert(array_newfruits.length);
+        alert("json : "+JSON.stringify(array_newfruits));
+
+        array_fruits.sort(); //ascending order
+        alert(array_fruits[0]); //apple
+        array_fruits.reverse(); //descending order
+        alert(array_fruits[0]); //orange
+
+        array_fruits.push("pear");
+        alert(array_fruits.length);
+
+        let sum = 0;
+        let array_numbers = [1,10,54,207];
+        array_numbers.forEach(sumFunction);
+        function sumFunction(item){
+            sum +=item;
+        }
+        alert("sum : " + sum);
+        let sum2 = 0;
+        for(let item of array_numbers){
+            sum2 +=item;
+        }
+        alert("sum2 : "+sum2);
+
+        let sum3 = 0;
+        for(i = 0; i<array_numbers.length;i++){
+            sum3 +=array_numbers[i];
+        }
+        alert("sum3 : "+sum3);
+
+        array_numbers.forEach(sumFunction2);
+        //1번째 파라미터는 array_numbers[0], ...
+        //2번째 파라미터는 0, 1 ...
+        //3번째 파라미터는 array_numbers
+        function sumFunction2(item, index, arr){
+            arr[index] = item * 10;
+            alert(index+" : "+arr[index]);
+        }
+        alert("foreach adv : " +array_numbers[0]); // 1 -> 10
+    */
+    /*
+        //구조분해할당
+        let dfruits = ["banana", "orange", "mango", "apple"];
+        let fruit1 = dfruits[0]; //banana
+        let fruit2 = dfruits[1]; //orange
+        let [fruit01, , ,fruit04] = dfruits;
+        alert(fruit01)
+        alert(fruit04);
+
+        let {[0]:fruit001, [3]:fruit004} = dfruits;
+        alert(fruit004);
+        //let fruit01 = dfruits[0];
+
+        //obejct 또한 구조분해할당 가능
+        let person = {
+            firstName : "선환",
+            lastName : "이",
+            age : 23
+        };
+
+        let lastName1 = person.lastName;
+        let lastName01 = person["lastName"];
+        //let {lastName, firstName} = person;
+        //alert("lastName : "+ lastName);
+        //alert("lastName01 : "+ lastName01);
+
+        let {firstName, lastName, country="KR", height} = person;
+        alert("lastName : "+lastName);
+        alert("country : "+country);
+        alert("height : " +height); //undefined, 초기화가 안되었을 뿐. 
+        height = 170;
+        alert("height : " +height); 
+
+        //Property Alias
+        let {lastName : lName, firstName : fName}=person;
+        alert(lName);
+        alert(fName);
+    */
+        let jsonObject = {
+            "firstName" : "선환",
+            "lastName" : "이",
+            "age" : 23,
+        };
+        let jsonArray = ["1", "2", "3"];
+        alert(jsonObject.firstName);
+        alert(jsonArray[1]);
+
+        //document.getElementById("div_json_test").innerHTML = "";
+        //객체를 문자열로 변환도 가능하고!
+        $("#div_json_test").html(JSON.stringify(jsonObject));
+        let string_json = $("#div_json_test").html();
+        alert(string_json);
+        //문자열로 되어있는 것을 객체로 변환도 가능함!
+        let afterParseJson = JSON.parse(string_json);
+        //let afterParseJson = JSON.parse(string_json.substring(0,1)); //객체로 표현되는게 아니라 변환 불가능함
+        alert(afterParseJson.age);
+
+        //Create an Object
+        let car = {};
+        // Add Properties
+        car.name = "Genesis";
+        car.year = "2024";
+        let myCar = {
+            name : 'Ford',
+            year : 2015,
+            print : function(){
+                return "Car info [" + this.name+"] - "+this.year;
+            }
+        }
+        alert(myCar.print());
+        document.write(myCar.print()+"<br>");
+        
+
+        //Class 사용!
+        class Car {
+            constructor(name){
+                this.brand = name;
+            }
+            present(){ return 'I have a '+this.brand;}
+
+        }
+        class Model extends Car {
+            constructor(name, model){
+                super(name);
+                this.model = model;
+            }
+            show(){
+                return this.present() + ', it is a '+this.model
+            }
+
+        }
+        const mycar = new Model("Hyundai", "Genesis");
+        document.write(mycar.show());
+        alert(mycar.show());
+
+        alert(location.href);
+        
+    </script>
+</body>
+</html>
